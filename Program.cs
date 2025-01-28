@@ -70,11 +70,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+// Ativar Swagger em todos os ambientes
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Todo API V1");
+    c.RoutePrefix = string.Empty; // Deixa o Swagger na raiz
+});
 
 app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
