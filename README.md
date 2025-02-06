@@ -15,3 +15,5 @@ Obs: a porta pode ser diferente dependo da maquina que subiu.
 
 O banco de dados usado foi o Postgres, mas para SQL Server basta mudar no Program.cs a linha 26 e trocar UseNpgsql por UseSqlServer e adicionar a connetionString do SQL Server
 O banco Postgres está hospedado no https://railway.com/
+
+Projeto comtempla uso de JWT, EntityFramework com Migrations
